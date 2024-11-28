@@ -50,3 +50,35 @@ Using the Direct Simulation Monte Carlo method, we focus on how the distribution
 <br />
 
 To simulate particle collision and the relaxation towards equilibrium using the Direct Simulation Monte Carlo method, first input parameters such as the number of particles, the number of time steps to simulate, and the range for velocity. Simulate collisions by randomly pairing particles and updating their velocities. To do this, sample a random collision angle $\theta$ uniformly from $-\pi$ to $\pi$, then update the velocities of the particles based on the collision angle.
+
+## Illustration 1
+
+We consider a uniform initial distribution of $n = 10\times 10^4$ particles in our illustration.
+
+![Uniform initial velocity distribution](https://raw.githubusercontent.com/jsonlaz/DSMC-method/main/results/uniform_initial.png)
+
+![Final velocity distribution](https://raw.githubusercontent.com/jsonlaz/DSMC-method/main/results/uniform_final_dsmc.png)
+
+This shows the evolution of a uniform initial distribution towards equilibrium (final velocity distribution) against a fixed range of velocities $v \in [-5,5]$.
+
+## Illustration 2
+
+We consider a triangular initial distribution of $n = 10\times 10^4$ particles in our illustration.
+
+![Triangular initial velocity distribution](https://raw.githubusercontent.com/jsonlaz/DSMC-method/main/results/triangular_initial.png)
+
+![Final velocity distribution](https://raw.githubusercontent.com/jsonlaz/DSMC-method/main/results/triangular_final_dsmc.png)
+
+This present the evolution of a triangular initial distribution towards equilibrium against a fixed range of velocities $v \in [-5,5]$.
+
+## Conclusion
+
+Over time, due to the random nature of collisions, particle systems tend towards equilibrium characterized by a Maxwellian distribution regardless of the initial velocity distribution. The H-theorem,  which states that a system not in equilibrium will evolve over time reaching a maximum at equilibrium, provides a theoretical foundation for the behaviour of the gas velocity described by the Boltzmann equation to evolve towards equilibrium.
+
+
+
+
+
+
+
+
