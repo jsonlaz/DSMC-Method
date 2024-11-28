@@ -1,0 +1,5 @@
+title: My GitHub Pages Site
+description: A cool site with LaTeX support
+markdown: kramdown
+plugins:
+  - jekyll-mathjax
