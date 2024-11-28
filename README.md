@@ -8,62 +8,61 @@ and explore analytically intractable scenarios.
 <br />
 
 <h2>Kac equation</h2>
+
 The Kac equation can be represented as:
 
-![equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;f}{\partial&space;t}&space;+&space;v\&space;\frac{\partial&space;f}{\partial&space;x}&space;+&space;F\&space;\frac{\partial&space;f}{\partial&space;v}&space;=&space;Q(f,f))
+![Kac Equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;f}{\partial&space;t}&space;+&space;v\&space;\frac{\partial&space;f}{\partial&space;x}&space;+&space;F\&space;\frac{\partial&space;f}{\partial&space;v}&space;=&space;Q(f,f))
 
 where $f = f(t,\ v,\ x)$ is the distribution function, $F$ is the external force, $g(\theta) = g( - \theta)$ is the collision kernel, and $Q(f, f)$ is the collision operator.
 
-The collision operator is a nonlinear integral operator that acts on $f(t,\ v,\ x)$ with respect to the velocity $v$ and describes the collision between particles. 
+The collision operator is a nonlinear integral operator that acts on $f(t,\ v,\ x)$ with respect to the velocity $v$ and describes the collision between particles.
 
 We represent the collision operator as:
 
-![equation](https://latex.codecogs.com/svg.latex?Q(f,f)&space;=&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v'\&space;)f(v_{*}'\&space;)&space;d\theta\&space;dv_{*}}}&space;-&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v)f(v_{*}\&space;)&space;d\theta\&space;dv_{*}}})
+![Collision Operator](https://latex.codecogs.com/svg.latex?Q(f,f)&space;=&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v'\&space;)f(v_{*}'\&space;)&space;d\theta\&space;dv_{*}}}&space;-&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v)f(v_{*}\&space;)&space;d\theta\&space;dv_{*}}})
 
-where cct \in \mathbb{R}$, $v,v_{*},x \in \mathbb{R}$.
+where $t \in \mathbb{R}$, $v,v_{*},x \in \mathbb{R}$.
+
 
 
 <h2>Simplifications and assumptions</h2>
- 
-Given the complexity, we simplify the kac_equation for a feasible numerical illustration within this format.
 
-We choose 
+Given the complexity, we simplify the Kac equation for a feasible numerical illustration within this format.
 
-\begin{equation}
-    g(\theta)=\frac{1}{2\pi}, \label{eq: g}
-\end{equation}
+We choose
 
-which implies a uniform distribution of scattering angles. This choice satisfies the normalization condition \eqref{eq: normalization_condition} for the collision kernel.
+![g(theta)](https://latex.codecogs.com/svg.latex?g(\theta)=\frac{1}{2\pi},\%20%5Clabel%7Beq%3A%20g%7D)
 
-Furthermore, we consider other assumptions as discussed in section \ref{assumptions}, such as:
+which implies a uniform distribution of scattering angles. This choice satisfies the normalization conditions for the collision kernel.
 
-\begin{itemize}
-    \item Spatially homogeneous case: Ignoring spatial dependence \((\frac{\partial f}{\partial x}=0)\) to focus on the velocity distribution evolution over time.
-    \item No external force: Setting \(F=0\) to eliminate the acceleration term \((\frac{\partial f}{\partial v})\).
-\end{itemize}
+Furthermore, we consider other assumptions such as:
 
-Hence, we have the simplified Kac equation \eqref{eq: reduced_kac}.g(\theta)=\frac{1}{2\pi}, \label{eq: g}
-\end{equation}
+- Spatially homogeneous case: Ignoring spatial dependence $\left(\frac{\partial f}{\partial x}=0\right)$ to focus on the velocity distribution evolution over time.
+- No external force: Setting $F=0$ to eliminate the acceleration term $\left(\frac{\partial f}{\partial v}\right)$.
 
-which implies a uniform distribution of scattering angles. This choice satisfies the normalization condition \eqref{eq: normalization_condition} for the collision kernel.
+Hence, we have the simplified Kac equation as:
 
-Furthermore, we consider other assumptions as discussed in section \ref{assumptions}, such as:
+![Kac Equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;f}{\partial&space;t}&space;=&space;Q(f,f)).
 
-\begin{itemize}
-    \item Spatially homogeneous case: Ignoring spatial dependence \((\frac{\partial f}{\partial x}=0)\) to focus on the velocity distribution evolution over time.
-    \item No external force: Setting \(F=0\) to eliminate the acceleration term \((\frac{\partial f}{\partial v})\).
-\end{itemize}
+<h2>Direct Simulation Monte Carlo method</h2>
 
-Hence, we have the simplified Kac equation \eqref{eq: reduced_kac}.
-
-#############################################################################
-<h1>JWipe - Disk Sanitization</h1>
-
-<h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
+Using the Direct Simulation Monte Carlo method, we focus on how the distribution of particle velocities evolves with time according to the Kac model and how it compares to the equilibrium state described by the Maxwellian distribution.
 <br />
 
+To simulate particle collision and the relaxation towards equilibrium using the Direct Simulation Monte Carlo method, first input parameters such as the number of particles, the number of time steps to simulate, and the range for velocity. Simulate collisions by randomly pairing particles and updating their velocities. To do this, sample a random collision angle $\theta$ uniformly from $-\pi$ to $\pi$, then update the velocities of the particles based on the collision angle.
 
+## Requirements:
+- Python 3.x
+- NumPy
+- Matplotlib
+
+## Installation:
+1. Clone the repository:
+git clone https://github.com/jsonlaz/DSMC-Method.git
+2. 
+
+
+######################################################################
 <h2>Languages and Utilities Used</h2>
 
 - <b>PowerShell</b> 
