@@ -1,1 +1,4 @@
-
+## Requirements:
+- Python 3.x
+- NumPy
+- Matplotlib
