@@ -10,7 +10,7 @@ and explore analytically intractable scenarios.
 <h2>Kac equation</h2>
 The Kac equation can be represented as:
 
-$$\frac{\partial f}{\partial t} + v\ \frac{\partial f}{\partial x} + F\ \frac{\partial f}{\partial v} = Q(f,f)$$
+![equation](https://latex.codecogs.com/svg.latex?\frac{\partial&space;f}{\partial&space;t}&space;+&space;v\&space;\frac{\partial&space;f}{\partial&space;x}&space;+&space;F\&space;\frac{\partial&space;f}{\partial&space;v}&space;=&space;Q(f,f))
 
 where $f = f(t,\ v,\ x)$ is the distribution function, $F$ is the external force, $g(\theta) = g( - \theta)$ is the collision kernel, and $Q(f, f)$ is the collision operator.
 
@@ -18,12 +18,43 @@ The collision operator is a nonlinear integral operator that acts on $f(t,\ v,\ 
 
 We represent the collision operator as:
 
+![equation](https://latex.codecogs.com/svg.latex?Q(f,f)&space;=&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v'\&space;)f(v_{*}'\&space;)&space;d\theta\&space;dv_{*}}}&space;-&space;\int_{-&space;\infty}^{\infty}{\int_{-&space;\pi}^{\pi}{g(\theta)f(v)f(v_{*}\&space;)&space;d\theta\&space;dv_{*}}})
 
-$$Q(f,f) = \int_{- \infty}^{\infty}{\int_{- \pi}^{\pi}{g(\theta)\left( f(v'\ )f(v_{*}'\ ) - f(v)f(v_{*}\ ) \right) d\theta\ dv_{*}}}$$
+where cct \in \mathbb{R}$, $v,v_{*},x \in \mathbb{R}$.
 
 
-where $t \in \mathbb{R}$, $v,v_{*},x \in \mathbb{R}$.
+<h2>Simplifications and assumptions</h2>
+ 
+Given the complexity, we simplify the kac_equation for a feasible numerical illustration within this format.
 
+We choose 
+
+\begin{equation}
+    g(\theta)=\frac{1}{2\pi}, \label{eq: g}
+\end{equation}
+
+which implies a uniform distribution of scattering angles. This choice satisfies the normalization condition \eqref{eq: normalization_condition} for the collision kernel.
+
+Furthermore, we consider other assumptions as discussed in section \ref{assumptions}, such as:
+
+\begin{itemize}
+    \item Spatially homogeneous case: Ignoring spatial dependence \((\frac{\partial f}{\partial x}=0)\) to focus on the velocity distribution evolution over time.
+    \item No external force: Setting \(F=0\) to eliminate the acceleration term \((\frac{\partial f}{\partial v})\).
+\end{itemize}
+
+Hence, we have the simplified Kac equation \eqref{eq: reduced_kac}.g(\theta)=\frac{1}{2\pi}, \label{eq: g}
+\end{equation}
+
+which implies a uniform distribution of scattering angles. This choice satisfies the normalization condition \eqref{eq: normalization_condition} for the collision kernel.
+
+Furthermore, we consider other assumptions as discussed in section \ref{assumptions}, such as:
+
+\begin{itemize}
+    \item Spatially homogeneous case: Ignoring spatial dependence \((\frac{\partial f}{\partial x}=0)\) to focus on the velocity distribution evolution over time.
+    \item No external force: Setting \(F=0\) to eliminate the acceleration term \((\frac{\partial f}{\partial v})\).
+\end{itemize}
+
+Hence, we have the simplified Kac equation \eqref{eq: reduced_kac}.
 
 #############################################################################
 <h1>JWipe - Disk Sanitization</h1>
