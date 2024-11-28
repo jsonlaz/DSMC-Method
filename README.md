@@ -50,8 +50,3 @@ Using the Direct Simulation Monte Carlo method, we focus on how the distribution
 <br />
 
 To simulate particle collision and the relaxation towards equilibrium using the Direct Simulation Monte Carlo method, first input parameters such as the number of particles, the number of time steps to simulate, and the range for velocity. Simulate collisions by randomly pairing particles and updating their velocities. To do this, sample a random collision angle $\theta$ uniformly from $-\pi$ to $\pi$, then update the velocities of the particles based on the collision angle.
-
-## Requirements:
-- Python 3.x
-- NumPy
-- Matplotlib
