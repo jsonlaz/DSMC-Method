@@ -1,9 +1,9 @@
 # DSMC-Method
 
- ### Numerical illustrations using Direct Simulation Monte Carlo method
+ ### Numerical illustrations using the Direct Simulation Monte Carlo method
 
 <h2>Description</h2>
-Numerical simulations to illustrate the analytical solutions to the Kac's equation
+Numerical simulations to illustrate the analytical solutions to Kac's equation
 and explore analytically intractable scenarios.
 <br />
 
