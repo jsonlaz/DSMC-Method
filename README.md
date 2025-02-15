@@ -75,8 +75,9 @@ This present the evolution of a triangular initial distribution towards equilibr
 
 Over time, due to the random nature of collisions, particle systems tend towards equilibrium characterized by a Maxwellian distribution regardless of the initial velocity distribution. The H-theorem,  which states that a system not in equilibrium will evolve over time reaching a maximum at equilibrium, provides a theoretical foundation for the behaviour of the gas velocity described by the Boltzmann equation to evolve towards equilibrium.
 
+## License
 
-
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details."]
 
 
 
